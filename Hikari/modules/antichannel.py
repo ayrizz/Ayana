@@ -18,15 +18,15 @@ def set_antichannel(update: Update, context: CallbackContext):
         s = args[0].lower()
         if s in ["yes", "on"]:
             enable_antichannel(chat.id)
-            message.reply_html("Enabled antichannel in {}".format(html.escape(chat.title)))
+            message.reply_html("AntiChannel diaktifkan di {}".format(html.escape(chat.title)))
         elif s in ["off", "no"]:
             disable_antichannel(chat.id)
-            message.reply_html("Disabled antichannel in {}".format(html.escape(chat.title)))
+            message.reply_html("Nonaktifkan antichannel di {}".format(html.escape(chat.title)))
         else:
-            message.reply_text("Unrecognized arguments {}".format(s))
+            message.reply_text("Argumen tidak dikenal {}".format(s))
         return
     message.reply_html(
-        "Antichannel setting is currently {} in {}".format(antichannel_status(chat.id), html.escape(chat.title)))
+        "Pengaturan antichannel saat ini {} in {}".format(antichannel_status(chat.id), html.escape(chat.title)))
 
 @Hikarimsg(Filters.chat_type.groups, group=110)
 def eliminate_channel(update: Update, context: CallbackContext):
@@ -42,12 +42,12 @@ def eliminate_channel(update: Update, context: CallbackContext):
         
 __help__ = """
 ──「 Anti-Channels 」──
-    ⚠️ WARNING ⚠️
-*IF YOU USE THIS MODE, THE RESULT IS IN THE GROUP FOREVER YOU CAN'T CHAT USING THE CHANNEL*
-Anti Channel Mode is a mode to automatically ban users who chat using Channels. 
-This command can only be used by *Admins*.
-❂ /antich <'on'/'yes'> *:* enables anti-channel-mode
-❂ /antich <'off'/'no'> *:* disabled anti-channel-mode
+    ⚠️ PERINGATAN ⚠️
+*JIKA ANDA MENGGUNAKAN MODE INI, HASILNYA ADA DI GROUP SELAMANYA ANDA TIDAK BISA CHAT MENGGUNAKAN CHANNEL*
+Mode Anti Saluran adalah mode untuk secara otomatis melarang pengguna yang mengobrol menggunakan Channel. 
+Perintah ini hanya dapat digunakan oleh *Admins*.
+❂ /antich <'on'/'yes'> *:* mengaktifkan mode anti-channel
+❂ /antich <'off'/'no'> *:* mode anti-channel dinonaktifkan
 """
 
 __mod_name__ = "Anti-Channel"
