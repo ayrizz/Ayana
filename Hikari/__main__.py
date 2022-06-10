@@ -82,29 +82,29 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 *ʜᴇʟʟᴏ {} !*
-⌬ ɪ'ᴍ ᴀɴ ᴀɴɪᴍᴇ-ᴛʜᴇᴍᴇ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ [🌺](https://telegra.ph/file/0b6f997589b5c9f708c4d.jpg)
+⬝ ʜɪᴋᴀʀɪ ᴀɴɪᴍᴇ-ᴛʜᴇᴍᴇ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ [🌺](https://telegra.ph/file/0b6f997589b5c9f708c4d.jpg)
 ────────────────────────
 ◈ *ᴜᴘᴛɪᴍᴇ:* `{}`
-◈ `{}` *ᴜsᴇʀs, ᴀᴄʀᴏss* `{}` *ᴄʜᴀᴛs*
+◈ `{}` *ᴘᴇɴɢɢᴜɴᴀ, ᴅɪ * `{}` *ɢʀᴏᴜᴘ*
 ────────────────────────
-⌬ ʜɪᴛ /help ᴛᴏ sᴇᴇ ᴍʏ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs.
+⬝ ᴛᴇᴋᴀɴ /help ᴜɴᴛᴜᴋ ʙᴀɴᴛᴜᴀɴ
 """
 
 buttons = [
         [
         InlineKeyboardButton(
-            text="➕️ ᴀᴅᴅ ʜɪᴋᴀʀɪ ʀᴏʙᴏᴛ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/HikariManageRobot?startgroup=true"
+            text="➕️ ᴛᴀᴍʙᴀʜᴋᴀɴ ʜɪᴋᴀʀɪ ᴋᴇ ɢʀᴏᴜᴘ ➕️", url="t.me/HikariManageRobot?startgroup=true"
         ),
     ],
     [
-        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/rexaprivateroom"
+        InlineKeyboardButton(text="⚡sᴜᴘᴘᴏʀᴛ", callback_data="hikari_support"
         ),
         InlineKeyboardButton(
-            text="ᴛʀʏɪɴʟɪɴᴇ", switch_inline_query_current_chat=""
+            text="👨‍💻ᴛᴇɴᴛᴀɴɢ", callback_data="hikari_"
         ),
     ],
     [
-        InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back"
+        InlineKeyboardButton(text="🗒️ʙᴀɴᴛᴜᴀɴ ᴘᴇʀɪɴᴛᴀʜ", callback_data="help_back"
         ),
     ],
 ]
@@ -444,11 +444,11 @@ def hikari_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="t.me/rexaprivateroom"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/tirexgugel"),
+                    InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="t.me/rexaprivateroom"),
+                    InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇ", url="t.me/tirexgugel"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="hikari_back"),
+                    InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data="hikari_back"),
                  
                  ]
                 ]
