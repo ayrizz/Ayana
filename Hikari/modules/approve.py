@@ -22,7 +22,7 @@ def approve(update, context):
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "I don't know who you're talking about, you're going to need to specify a user!",
+            "Saya tidak tahu siapa yang Anda bicarakan, Anda harus menentukan pengguna!",
         )
         return ""
     try:
@@ -31,18 +31,18 @@ def approve(update, context):
         return ""
     if member.status in ("administrator", "creator"):
         message.reply_text(
-            "User is already admin - locks, blocklists, and antiflood already don't apply to them.",
+            "Pengguna sudah menjadi admin - kunci, daftar blokir, dan antibanjir tidak berlaku untuk mereka.",
         )
         return ""
     if sql.is_approved(message.chat_id, user_id):
         message.reply_text(
-            f"[{member.user['first_name']}](tg://user?id={member.user['id']}) is already approved in {chat_title}",
+            f"[{member.user['first_name']}](tg://user?id={member.user['id']}) sudah disetujui di {chat_title}",
             parse_mode=ParseMode.MARKDOWN,
         )
         return ""
     sql.approve(message.chat_id, user_id)
     message.reply_text(
-        f"[{member.user['first_name']}](tg://user?id={member.user['id']}) has been approved in {chat_title}! They will now be ignored by automated admin actions like locks, blocklists, and antiflood.",
+        f"[{member.user['first_name']}](tg://user?id={member.user['id']}) telah disetujui di {chat_title}! Mereka sekarang akan diabaikan oleh tindakan admin otomatis seperti kunci, daftar blokir, dan antiflood.",
         parse_mode=ParseMode.MARKDOWN,
     )
     log_message = (
@@ -66,7 +66,7 @@ def disapprove(update, context):
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "I don't know who you're talking about, you're going to need to specify a user!",
+            "Saya tidak tahu siapa yang Anda bicarakan, Anda harus menentukan pengguna!",
         )
         return ""
     try:
@@ -74,14 +74,14 @@ def disapprove(update, context):
     except BadRequest:
         return ""
     if member.status in ("administrator", "creator"):
-        message.reply_text("This user is an admin, they can't be unapproved.")
+        message.reply_text("Pengguna ini adalah admin, mereka tidak dapat ditolak.")
         return ""
     if not sql.is_approved(message.chat_id, user_id):
-        message.reply_text(f"{member.user['first_name']} isn't approved yet!")
+        message.reply_text(f"{member.user['first_name']} belum disetujui!")
         return ""
     sql.disapprove(message.chat_id, user_id)
     message.reply_text(
-        f"{member.user['first_name']} is no longer approved in {chat_title}.",
+        f"{member.user['first_name']} tidak lagi disetujui di {chat_title}.",
     )
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
@@ -104,7 +104,7 @@ def approved(update, context):
         member = chat.get_member(int(i.user_id))
         msg += f"- `{i.user_id}`: {member.user['first_name']}\n"
     if msg.endswith("approved.\n"):
-        message.reply_text(f"No users are approved in {chat_title}.")
+        message.reply_text(f"Tidak ada pengguna yang disetujui di {chat_title}.")
         return ""
     message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
 
@@ -118,7 +118,7 @@ def approval(update, context):
     member = chat.get_member(int(user_id))
     if not user_id:
         message.reply_text(
-            "I don't know who you're talking about, you're going to need to specify a user!",
+            "Saya tidak tahu siapa yang Anda bicarakan, Anda harus menentukan pengguna!",
         )
         return ""
     if sql.is_approved(message.chat_id, user_id):
@@ -137,7 +137,7 @@ def unapproveall(update: Update, context: CallbackContext):
     member = chat.get_member(user.id)
     if member.status != "creator" and user.id not in DRAGONS:
         update.effective_message.reply_text(
-            "Only the chat owner can unapprove all users at once.",
+            "Hanya pemilik obrolan yang dapat membatalkan persetujuan semua pengguna sekaligus.",
         )
     else:
         buttons = InlineKeyboardMarkup(
@@ -174,7 +174,7 @@ def unapproveall_btn(update: Update, context: CallbackContext):
             users = [int(i.user_id) for i in approved_users]
             for user_id in users:
                 sql.disapprove(chat.id, user_id)
-            message.edit_text("Successfully Unapproved all user in this Chat.")
+            message.edit_text("Berhasil Membatalkan persetujuan semua pengguna dalam Obrolan ini.")
             return
 
         if member.status == "administrator":
@@ -184,7 +184,7 @@ def unapproveall_btn(update: Update, context: CallbackContext):
             query.answer("You need to be admin to do this.")
     elif query.data == "unapproveall_cancel":
         if member.status == "creator" or query.from_user.id in DRAGONS:
-            message.edit_text("Removing of all approved users has been cancelled.")
+            message.edit_text("Penghapusan semua pengguna yang disetujui telah dibatalkan.")
             return ""
         if member.status == "administrator":
             query.answer("Only owner of the chat can do this.")
