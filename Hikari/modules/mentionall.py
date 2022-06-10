@@ -17,7 +17,7 @@ spam_chats = []
 async def mentionall(event):
     chat_id = event.chat_id
     if event.is_private:
-        return await event.respond("This command can be use in groups and channels!")
+        return await event.respond("Perintah ini dapat digunakan dalam grup dan channel!")
 
     is_admin = False
     try:
@@ -30,10 +30,10 @@ async def mentionall(event):
         ):
             is_admin = True
     if not is_admin:
-        return await event.respond("Only admins can mention all!")
+        return await event.respond("Hanya admin yang bisa mention semua!")
 
     if event.pattern_match.group(1) and event.is_reply:
-        return await event.respond("Give me one argument!")
+        return await event.respond("Beri aku satu argumen!")
     elif event.pattern_match.group(1):
         mode = "text_on_cmd"
         msg = event.pattern_match.group(1)
@@ -42,11 +42,11 @@ async def mentionall(event):
         msg = await event.get_reply_message()
         if msg == None:
             return await event.respond(
-                "I can't mention members for older messages! (messages which are sent before I'm added to group)"
+                "Saya tidak bisa menyebut anggota untuk pesan lama! (pesan yang dikirim sebelum saya ditambahkan ke grup)"
             )
     else:
         return await event.respond(
-            "Reply to a message or give me some text to mention others!"
+            "Membalas pesan atau memberi saya beberapa teks untuk menyebutkan orang lain!"
         )
 
     Spam = spam_chats.append(chat_id)
@@ -75,13 +75,13 @@ async def mentionall(event):
 @Client.on(events.NewMessage(pattern="^/cancel$"))
 async def cancel_spam(event):
     if not event.chat_id in spam_chats:
-        return await event.respond("There is no proccess on going...")
+        return await event.respond("Tidak ada proses yang berjalan...")
     else:
         try:
             spam_chats.remove(event.chat_id)
         except:
             pass
-        return await event.respond("Stopped.")
+        return await event.respond("Berhenti.")
 
 
 __mod_name__ = "Mentions"
