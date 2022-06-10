@@ -421,7 +421,7 @@ def hikari_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="prime_")]]
+                [[InlineKeyboardButton(text="Go Back", callback_data="hikari_back")]]
             ),
         )
 
@@ -433,7 +433,7 @@ def hikari_about_callback(update, context):
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="prime_")]]
+                [[InlineKeyboardButton(text="Go Back", callback_data="hikari_back")]]
             ),
         )
     elif query.data == "hikari_support":
@@ -448,7 +448,7 @@ def hikari_about_callback(update, context):
                     InlineKeyboardButton(text="Updates", url="https://t.me/tirexgugel"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="prime_"),
+                    InlineKeyboardButton(text="Go Back", callback_data="hikari_back"),
                  
                  ]
                 ]
@@ -468,7 +468,7 @@ def hikari_about_callback(update, context):
                     InlineKeyboardButton(text="Tonic", url="t.me/Bukan_guudlooking"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="prime_"),
+                    InlineKeyboardButton(text="Go Back", callback_data="hikari_back"),
                  
                  ]
                 ]
@@ -501,7 +501,7 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="prime_")
+                    InlineKeyboardButton(text="Go Back", callback_data="hikari_back")
                  ]
                 ]
             ),
@@ -550,7 +550,7 @@ def get_help(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Help & Command ❓",
+                            text="ʙᴀɴᴛᴜᴀɴ ᴘᴇʀɪɴᴛᴀʜ ↗️",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
                     ]
