@@ -1,5 +1,5 @@
 # We're using Debian Slim Buster image
-FROM python:3.10.1-slim-buster
+FROM python:3.10.6-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
 
@@ -65,7 +65,7 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/Hikari 
-RUN git clone -b shiken https://github.com/Tonic990/Hikari /root/Hikari
+RUN git clone -b shiken https://github.com/ayrizz/Ayana /root/Hikari
 WORKDIR /root/Hikari
 
 #Copy config file to /root/Hikari/Hikari
