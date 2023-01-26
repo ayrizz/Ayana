@@ -82,7 +82,7 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 *ʜᴇʟʟᴏ {} !*
-⬝ ᴀʏᴀɴᴀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ [🌺](https://telegra.ph//file/2cc6fdab0ac03d6c02896.jpg)
+⬝ ҡʏɴλɴ ꭙ ꝛᴏʙᴏᴛ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ [🌺](https://telegra.ph//file/b5fa050775543872ae0ec.jpg)
 ────────────────────────
 ◈ *ᴜᴘᴛɪᴍᴇ:* `{}`
 ◈ `{}` *ᴘᴇɴɢɢᴜɴᴀ, ᴅɪ * `{}` *ɢʀᴏᴜᴘ*
@@ -113,10 +113,10 @@ buttons = [
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
-HIKARI_IMG = "https://telegra.ph//file/2cc6fdab0ac03d6c02896.jpg"
+HIKARI_IMG = "https://telegra.ph//file/b5fa050775543872ae0ec.jpg"
 
 DONATE_STRING = """Heya, senang mendengar Anda ingin menyumbang!
- Anda dapat mendukung proyek dengan menghubungi @Iam_Wynne \
+ Anda dapat mendukung proyek dengan menghubungi @Riizzvbss \
  Mendukung tidak selalu finansial! \
  Mereka yang tidak dapat memberikan dukungan uang dipersilakan untuk membantu kami mengembangkan bot ."""
 
@@ -232,7 +232,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"<b>Hai, saya Ayana Robot!</b>\n<b>Mulai bekerja sejak :</b> <code>{uptime}</code>",
+            f"<b>Hai, saya Kynan Robot!</b>\n<b>Mulai bekerja sejak :</b> <code>{uptime}</code>",
             parse_mode=ParseMode.HTML
        )
 
@@ -363,8 +363,8 @@ def hikari_about_callback(update, context):
     query = update.callback_query
     if query.data == "hikari_":
         query.message.edit_text(
-            text="๏ Saya *Ayana Robot*, bot manajemen grup canggih yang dibuat untuk membantu Anda mengelola grup dengan mudah."
-            "\n• Pemilik saya : @Iam_Wynne ."
+            text="๏ Saya *Kynan Robot*, bot manajemen grup canggih yang dibuat untuk membantu Anda mengelola grup dengan mudah."
+            "\n• Pemilik saya : @Riizzvbss ."
             "\n• Saya dapat menyapa pengguna dengan pesan selamat datang yang dapat disesuaikan dan bahkan menetapkan aturan grup."
             "\n• Saya memiliki sistem anti-banjir yang canggih."
             "\n• Saya dapat memperingatkan pengguna sampai mereka mencapai peringatan maksimal, dengan setiap tindakan yang telah ditentukan sebelumnya seperti larangan, bisu, tendang, dll."
@@ -437,14 +437,14 @@ def hikari_about_callback(update, context):
         )
     elif query.data == "hikari_support":
         query.message.edit_text(
-            text="*๏ Ayana support chats*"
+            text="*๏ Kynan support chats*"
             "\nBergabunglah dengan Grup/Saluran Dukungan Saya untuk melihat atau melaporkan masalah di Ayana.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/RyuMusicLog"),
-                    InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇ", url="https://t.me/RyuProjects"),
+                    InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/AyaMusicLog"),
+                    InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇ", url="https://t.me/FamilyAlarick"),
                  ],
                  [
                     InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data="hikari_back"),
@@ -457,7 +457,7 @@ def hikari_about_callback(update, context):
 
     elif query.data == "hikari_credit":
         query.message.edit_text(
-            text=f"<b>๏ Credis for Ayana</b>\n"
+            text=f"<b>๏ Credis for Kynan</b>\n"
             f"\nHere Developers Making The Ayana Robot",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
@@ -794,7 +794,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                "👋 ʜɪ ғʀɪᴇɴᴅs, ɪᴍ ʜᴇʀᴇ ᴊᴜsᴛ ғᴏʀ ʏᴏᴜ .",
+                "👋 Halo, Saya Hidup .",
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
