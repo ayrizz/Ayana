@@ -59,7 +59,7 @@ if ENV:
     except ValueError:
         raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
-    JOIN_LOGGER = os.environ.get("JOIN_LOGGER", "-1001320878714")
+    JOIN_LOGGER = os.environ.get("JOIN_LOGGER", "-1001812143750")
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
 
     try:
@@ -213,10 +213,8 @@ else:
 # If you forking dont remove this id, just add your id. LOL...
 
 DRAGONS.add(OWNER_ID)
-DRAGONS.add(1428194265)
 DRAGONS.add(951454060)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1428194265)
 DEV_USERS.add(951454060)
 
 if not SPAMWATCH_API:
