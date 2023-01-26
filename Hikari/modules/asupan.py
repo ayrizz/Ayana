@@ -50,7 +50,51 @@ async def _(event):
             )
         await memeks.delete()
     except Exception:
-        await memeks.edit("PP animenya ga ada ")  
+        await memeks.edit("PP animenya ga ada ")
+        
+        
+@register(pattern="^/ppcp ?(.*)")
+async def _(event):
+    memeks = await event.reply("**Mencari PPCP...🔍**") 
+    try:
+        asupannya = [
+            asupan
+            async for asupan in ubot2.iter_messages(
+            "@ppcpcilik", filter=InputMessagesFilterPhotos
+            )
+        ]
+        kontols = random.choice(asupannya)
+        pantek = await ubot2.download_media(kontols)
+        await tbot.send_file(
+            event.chat.id, 
+            caption="Nih ppcp ", 
+            file=pantek
+            )
+        await memeks.delete()
+    except Exception:
+        await memeks.edit("PP ga ada ")  
+        
+        
+@register(pattern="^/ayang ?(.*)")
+async def _(event):
+    memeks = await event.reply("**Mencari Ayang...🔍**") 
+    try:
+        asupannya = [
+            asupan
+            async for asupan in ubot2.iter_messages(
+            "@CeweLogoPack", filter=InputMessagesFilterPhotos
+            )
+        ]
+        kontols = random.choice(asupannya)
+        pantek = await ubot2.download_media(kontols)
+        await tbot.send_file(
+            event.chat.id, 
+            caption="Nih ayang siapa ?", 
+            file=pantek
+            )
+        await memeks.delete()
+    except Exception:
+        await memeks.edit("Ayang nya ga ada ")  
 
 
 @register(pattern="^/wallanime ?(.*)")
@@ -73,6 +117,28 @@ async def _(event):
         await memeks.delete()
     except Exception:
         await memeks.edit("Wallpaper Animenya Kosong ")  
+        
+        
+@register(pattern="^/bokep ?(.*)")
+async def _(event):
+    memeks = await event.reply("**Mencari Bokep...🔍**") 
+    try:
+        asupannya = [
+            asupan
+            async for asupan in ubot2.iter_messages(
+            "@bahaninimah", filter=InputMessagesFilterPhotos
+            )
+        ]
+        kontols = random.choice(asupannya)
+        pantek = await ubot2.download_media(kontols)
+        await tbot.send_file(
+            event.chat.id, 
+            caption="Nih Buat Coli ", 
+            file=pantek
+            )
+        await memeks.delete()
+    except Exception:
+        await memeks.edit("Coli Mulu Lu ")  
 
 
 
