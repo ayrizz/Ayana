@@ -20,5 +20,5 @@ async def awake(event):
   PRIME += f"🌼 **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tlhver}` \n\n"
   PRIME += f"🌼 **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{pyrover}` \n\n"
   PRIME += "**ᴛᴇʀɪᴍᴀᴋᴀsɪʜ sᴜᴅᴀʜ ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ᴋᴜ ᴅɪsɪɴɪ ❤️**"
-  BUTTON = [[Button.url("ʜᴇʟᴘ​", "https://t.me/AyanaMusiicBot?start=help"), Button.url("sᴜᴘᴘᴏʀᴛ​", "https://t.me/AyaMusicLog")]]
+  BUTTON = [[Button.url("ʜᴇʟᴘ​", "https://t.me/KynanUserbot?start=help"), Button.url("sᴜᴘᴘᴏʀᴛ​", "https://t.me/AyaMusicLog")]]
   await tbot.send_file(event.chat_id, PHOTO, caption=PRIME,  buttons=BUTTON)
