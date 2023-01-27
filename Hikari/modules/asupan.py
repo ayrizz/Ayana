@@ -126,7 +126,7 @@ async def _(event):
         asupannya = [
             asupan
             async for asupan in ubot2.iter_messages(
-            "@bahaninimah", filter=InputMessagesFilterPhotos
+            "@bahaninimah", filter=InputMessagesFilterVideo
             )
         ]
         kontols = random.choice(asupannya)
